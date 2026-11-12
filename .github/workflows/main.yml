@@ -1,0 +1,27 @@
+
+name: Build Saiyan World PSP
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get game files
+        uses: actions/checkout@v4
+
+      - name: Compile PSP game
+        run: |
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE:/src" \
+            -w /src \
+            pspdev/pspdev:latest \
+            make
+
+      - name: Save PSP game
+        uses: actions/upload-artifact@v4
+        with:
+          name: Saiyan-World-PSP
+          path: EBOOT.PBP
