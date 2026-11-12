@@ -3,7 +3,7 @@ TARGET = main
 OBJS = main.o
 
 CFLAGS = -O2 -G0 -Wall
-LIBS = -lpspdebug
+LIBS = -lpspdebug -lpspctrl
 
 EXTRA_TARGETS = EBOOT.PBP
 PSP_EBOOT_TITLE = Saiyan World PSP
