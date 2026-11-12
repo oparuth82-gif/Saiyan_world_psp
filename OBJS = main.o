@@ -1,6 +1,6 @@
 
 TARGET = main
-OBJS = Scripts/main.o
+OBJS = main.o
 
 CFLAGS = -O2 -G0 -Wall
 LIBS = -lpspdebug
